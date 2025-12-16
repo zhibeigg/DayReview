@@ -9,8 +9,9 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "your-openai-api-key-here")
 OPENAI_MODEL = "gpt-4o-mini"  # 或 gpt-4o
 
 # Anthropic Claude
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "your-anthropic-api-key-here")
-ANTHROPIC_MODEL = "claude-3-5-sonnet-20241022"
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_AUTH_TOKEN", os.environ.get("ANTHROPIC_API_KEY", ""))
+ANTHROPIC_BASE_URL = os.environ.get("ANTHROPIC_BASE_URL", None)
+ANTHROPIC_MODEL = "claude-opus-4-5-20251101"
 
 # 选择使用哪个AI (openai 或 anthropic)
 AI_PROVIDER = "anthropic"

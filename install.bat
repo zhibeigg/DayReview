@@ -1,24 +1,23 @@
 @echo off
-chcp 65001 >nul
 echo ========================================
-echo   DayReview - 一天回顾 | 安装依赖
+echo   DayReview - Install Dependencies
 echo ========================================
 echo.
 
 cd /d "%~dp0"
 
-echo 正在安装依赖包...
-pip install -r requirements.txt
+echo Installing dependencies...
+python -m pip install -r requirements.txt
 
 echo.
 echo ========================================
-echo   安装完成！
+echo   Installation Complete!
 echo ========================================
 echo.
-echo 使用方法:
-echo   1. 命令行模式: python main.py
-echo   2. 托盘模式:   python tray_app.py
+echo Usage:
+echo   1. CLI mode:  python main.py
+echo   2. Tray mode: python tray_app.py
 echo.
-echo 首次使用请编辑 config.py 填写 API 密钥
+echo Edit config.py to set your API key before first use.
 echo.
 pause

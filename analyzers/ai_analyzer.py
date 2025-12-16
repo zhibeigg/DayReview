@@ -7,7 +7,7 @@ from typing import Optional
 
 from ..config import (
     AI_PROVIDER, OPENAI_API_KEY, OPENAI_MODEL,
-    ANTHROPIC_API_KEY, ANTHROPIC_MODEL
+    ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL, ANTHROPIC_MODEL
 )
 from ..utils.helpers import format_minutes
 
@@ -130,7 +130,11 @@ class AIAnalyzer:
         """调用Anthropic API"""
         import anthropic
 
-        client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        client_kwargs = {"api_key": ANTHROPIC_API_KEY}
+        if ANTHROPIC_BASE_URL:
+            client_kwargs["base_url"] = ANTHROPIC_BASE_URL
+
+        client = anthropic.Anthropic(**client_kwargs)
 
         response = client.messages.create(
             model=ANTHROPIC_MODEL,
