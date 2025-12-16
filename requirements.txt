@@ -1,0 +1,28 @@
+# DayReview - 一天回顾 | 依赖包
+
+# Windows API
+pywin32>=305
+
+# 键鼠监控
+pynput>=1.7.6
+
+# 进程信息
+psutil>=5.9.0
+
+# AI API (选择一个或两个都安装)
+openai>=1.0.0
+anthropic>=0.18.0
+
+# 定时任务
+schedule>=1.2.0
+
+# 桌面通知
+plyer>=2.1.0
+# win10toast>=0.9  # 可选，Windows 10 通知
+
+# 系统托盘
+pystray>=0.19.4
+Pillow>=10.0.0
+
+# 剪贴板
+pyperclip>=1.8.2
